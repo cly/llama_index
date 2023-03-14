@@ -89,6 +89,9 @@ class GPTTreeIndex(BaseGPTIndex[IndexGraph]):
             QueryMode.SUMMARIZE: GPTTreeIndexSummarizeQuery,
         }
 
+    def foo(self) -> None:
+        return "bar"
+
     def _build_fallback_text_splitter(self) -> TextSplitter:
         # if not specified, use "smart" text splitter to ensure chunks fit in prompt
         return self._prompt_helper.get_text_splitter_given_prompt(
